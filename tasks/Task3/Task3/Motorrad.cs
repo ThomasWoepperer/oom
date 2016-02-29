@@ -1,19 +1,17 @@
 using System;
-using System.Linq;
 
 namespace Task3
 {
-	public class Auto : IAusgabe
-	{ 
+	public class Motorrad : IAusgabe
+	{
 		private decimal Verkaufspreis;
 		private string Lackfarbe;
-		private bool Allrad;
-		private string Automarke;
+		private string Motorradmarke;
 
 		public string Marke
 		{
 			get {
-				return Automarke;
+				return Motorradmarke;
 			}
 		}
 
@@ -39,28 +37,24 @@ namespace Task3
 
 			}
 		}
-			
-		public bool hatAllrad {
-			get {
-				return Allrad;
-			}
-		}
 
 
 
-		public Auto (decimal Preis, string Farbe, bool Allrad, string Marke)
+
+
+
+		public Motorrad (decimal Preis, string Farbe, string Marke)
 		{
 			Lackfarbe = Farbe; 
 			Verkaufspreis = Preis;
-			this.Allrad = Allrad;
-			Automarke = Marke;
+			Motorradmarke = Marke;
 		}
-		public Auto (string Farbe, string Marke)
+		public Motorrad (string Farbe, string Marke)
 		{
 			Lackfarbe = Farbe;
-			Automarke = Marke;
+			Motorradmarke = Marke;
 			Verkaufspreis = 0;
-			Allrad = false;
+
 		}
 
 		public void lackieren ()
@@ -86,7 +80,7 @@ namespace Task3
 
 			}
 
-				Console.WriteLine("Keine gültige Farbe eingegeben.");
+			Console.WriteLine("Keine gültige Farbe eingegeben.");
 		}
 		public void updateprice ()
 		{
@@ -94,7 +88,7 @@ namespace Task3
 			decimal newPrice;
 			bool isDecimal = Decimal.TryParse (price, out newPrice);
 			if (isDecimal) {
-		     
+
 
 				this.Preis = newPrice;
 			} else {
@@ -106,14 +100,12 @@ namespace Task3
 		public void printProperties()
 		{
 			Console.WriteLine("Verkaufspreis = {0}",this.Preis);
-			Console.WriteLine ("Automarke = {0}", this.Marke);
+			Console.WriteLine ("Motorradmarke = {0}", this.Marke);
 			Console.WriteLine ("Lackfarbe = {0}", this.Farbe);
-			Console.WriteLine ("Allrad = {0}", this.Allrad);
 			Console.WriteLine ();
 
 
 		}
-
 
 	}
 }
