@@ -33,23 +33,18 @@
     <Reference Include="System" />
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Package>nunit</Package>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookTests.cs" />
-    <Compile Include="PriceTests.cs" />
     <Compile Include="ExchangeRatesTests.cs" />
     <Compile Include="GiftCardTests.cs" />
+    <Compile Include="Pricetests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\lesson4\lesson4.csproj">
-      <Project>{9E4E0DD7-F3CE-44A2-9821-8EDB98C85955}</Project>
-      <Name>lesson4</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
